@@ -7,3 +7,4 @@
 /tools/python/.venv/
 
 
+/tests/smoke_test.cpp
