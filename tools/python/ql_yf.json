@@ -1,0 +1,141 @@
+{
+  "source": "QuantLib 1.43",
+  "tolerance": {
+    "kind": "absolute",
+    "value": 1e-12
+  },
+  "cases": [
+    {
+      "d1": "2026-09-07",
+      "d2": "2026-12-07",
+      "note": "ordinary quarter",
+      "actual_days": 91,
+      "year_fraction": {
+        "act_365f": 0.2493150684931507,
+        "act_360": 0.25277777777777777,
+        "thirty_360_bb": 0.25,
+        "thirty_360_e": 0.25
+      }
+    },
+    {
+      "d1": "2026-01-01",
+      "d2": "2027-01-01",
+      "note": "exactly one year; ACT/360 still gives 1.0139",
+      "actual_days": 365,
+      "year_fraction": {
+        "act_365f": 1.0,
+        "act_360": 1.0138888888888888,
+        "thirty_360_bb": 1.0,
+        "thirty_360_e": 1.0
+      }
+    },
+    {
+      "d1": "2027-09-07",
+      "d2": "2028-09-07",
+      "note": "366 days, contains a leap day",
+      "actual_days": 366,
+      "year_fraction": {
+        "act_365f": 1.0027397260273974,
+        "act_360": 1.0166666666666666,
+        "thirty_360_bb": 1.0,
+        "thirty_360_e": 1.0
+      }
+    },
+    {
+      "d1": "2026-08-31",
+      "d2": "2026-09-30",
+      "note": "month end to month end",
+      "actual_days": 30,
+      "year_fraction": {
+        "act_365f": 0.0821917808219178,
+        "act_360": 0.08333333333333333,
+        "thirty_360_bb": 0.08333333333333333,
+        "thirty_360_e": 0.08333333333333333
+      }
+    },
+    {
+      "d1": "2026-01-31",
+      "d2": "2026-03-31",
+      "note": "31st to 31st",
+      "actual_days": 59,
+      "year_fraction": {
+        "act_365f": 0.16164383561643836,
+        "act_360": 0.1638888888888889,
+        "thirty_360_bb": 0.16666666666666666,
+        "thirty_360_e": 0.16666666666666666
+      }
+    },
+    {
+      "d1": "2026-01-31",
+      "d2": "2026-02-28",
+      "note": "into February",
+      "actual_days": 28,
+      "year_fraction": {
+        "act_365f": 0.07671232876712329,
+        "act_360": 0.07777777777777778,
+        "thirty_360_bb": 0.07777777777777778,
+        "thirty_360_e": 0.07777777777777778
+      }
+    },
+    {
+      "d1": "2026-11-30",
+      "d2": "2027-02-28",
+      "note": "crosses a year boundary",
+      "actual_days": 90,
+      "year_fraction": {
+        "act_365f": 0.2465753424657534,
+        "act_360": 0.25,
+        "thirty_360_bb": 0.24444444444444444,
+        "thirty_360_e": 0.24444444444444444
+      }
+    },
+    {
+      "d1": "2026-06-15",
+      "d2": "2026-06-15",
+      "note": "same day; must be 0, not an error",
+      "actual_days": 0,
+      "year_fraction": {
+        "act_365f": 0.0,
+        "act_360": 0.0,
+        "thirty_360_bb": 0.0,
+        "thirty_360_e": 0.0
+      }
+    },
+    {
+      "d1": "2026-01-30",
+      "d2": "2026-01-31",
+      "note": "distinct dates worth zero under 30/360",
+      "actual_days": 1,
+      "year_fraction": {
+        "act_365f": 0.0027397260273972603,
+        "act_360": 0.002777777777777778,
+        "thirty_360_bb": 0.0,
+        "thirty_360_e": 0.0
+      }
+    },
+    {
+      "d1": "2026-02-28",
+      "d2": "2026-03-31",
+      "note": "33 fictional days in a 30-day month; BB != 30E",
+      "actual_days": 31,
+      "year_fraction": {
+        "act_365f": 0.08493150684931507,
+        "act_360": 0.08611111111111111,
+        "thirty_360_bb": 0.09166666666666666,
+        "thirty_360_e": 0.08888888888888889
+      }
+    },
+    {
+      "d1": "2028-02-29",
+      "d2": "2028-08-31",
+      "note": "leap-day start, tau > half a year; BB != 30E",
+      "actual_days": 184,
+      "year_fraction": {
+        "act_365f": 0.5041095890410959,
+        "act_360": 0.5111111111111111,
+        "thirty_360_bb": 0.5055555555555555,
+        "thirty_360_e": 0.5027777777777778
+      }
+    }
+  ]
+}
