@@ -1,0 +1,34 @@
+---
+Language: Cpp
+BasedOnStyle: LLVM
+Standard: Latest
+
+ColumnLimit: 100
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+
+PointerAlignment: Left
+ReferenceAlignment: Left
+DerivePointerAlignment: false
+
+BreakBeforeBraces: Attach
+NamespaceIndentation: None
+
+# Keep bodies expanded: one statement per line, predictable breakpoints.
+# (Empty {} bodies may still collapse.)
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortBlocksOnASingleLine: Never
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+
+SortIncludes: CaseSensitive
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: "^<[^/.]+>$"
+    Priority: 1
+  - Regex: '^["<]atium/'
+    Priority: 3
+  - Regex: ".*"
+    Priority: 2
+...
