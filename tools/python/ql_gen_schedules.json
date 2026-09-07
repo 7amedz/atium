@@ -1,0 +1,196 @@
+{
+  "source": "QuantLib 1.43",
+  "calendar": "NullCalendar",
+  "convention": "Unadjusted",
+  "rule": "Backward",
+  "end_of_month": false,
+  "cases": [
+    {
+      "start": "2026-09-07",
+      "termination": "2029-09-07",
+      "frequency_months": 12,
+      "note": "regular annual, nothing capped",
+      "expected_dates": [
+        "2026-09-07",
+        "2027-09-07",
+        "2028-09-07",
+        "2029-09-07"
+      ],
+      "period_count": 3
+    },
+    {
+      "start": "2026-09-07",
+      "termination": "2031-09-07",
+      "frequency_months": 6,
+      "note": "regular semi-annual, five years",
+      "expected_dates": [
+        "2026-09-07",
+        "2027-03-07",
+        "2027-09-07",
+        "2028-03-07",
+        "2028-09-07",
+        "2029-03-07",
+        "2029-09-07",
+        "2030-03-07",
+        "2030-09-07",
+        "2031-03-07",
+        "2031-09-07"
+      ],
+      "period_count": 10
+    },
+    {
+      "start": "2026-09-07",
+      "termination": "2027-09-07",
+      "frequency_months": 3,
+      "note": "regular quarterly, one year",
+      "expected_dates": [
+        "2026-09-07",
+        "2026-12-07",
+        "2027-03-07",
+        "2027-06-07",
+        "2027-09-07"
+      ],
+      "period_count": 4
+    },
+    {
+      "start": "2026-09-07",
+      "termination": "2036-09-07",
+      "frequency_months": 12,
+      "note": "ten years, ten periods",
+      "expected_dates": [
+        "2026-09-07",
+        "2027-09-07",
+        "2028-09-07",
+        "2029-09-07",
+        "2030-09-07",
+        "2031-09-07",
+        "2032-09-07",
+        "2033-09-07",
+        "2034-09-07",
+        "2035-09-07",
+        "2036-09-07"
+      ],
+      "period_count": 10
+    },
+    {
+      "start": "2026-08-31",
+      "termination": "2028-08-31",
+      "frequency_months": 3,
+      "note": "roll day 31: four caps, two recoveries to 31",
+      "expected_dates": [
+        "2026-08-31",
+        "2026-11-30",
+        "2027-02-28",
+        "2027-05-31",
+        "2027-08-31",
+        "2027-11-30",
+        "2028-02-29",
+        "2028-05-31",
+        "2028-08-31"
+      ],
+      "period_count": 8
+    },
+    {
+      "start": "2026-01-31",
+      "termination": "2026-07-31",
+      "frequency_months": 3,
+      "note": "31st through February",
+      "expected_dates": [
+        "2026-01-31",
+        "2026-04-30",
+        "2026-07-31"
+      ],
+      "period_count": 2
+    },
+    {
+      "start": "2026-11-30",
+      "termination": "2027-02-28",
+      "frequency_months": 3,
+      "note": "anchor is a 28-day month end",
+      "expected_dates": [
+        "2026-11-30",
+        "2027-02-28"
+      ],
+      "period_count": 1
+    },
+    {
+      "start": "2028-02-29",
+      "termination": "2029-02-28",
+      "frequency_months": 12,
+      "note": "leap-day start",
+      "expected_dates": [
+        "2028-02-29",
+        "2029-02-28"
+      ],
+      "period_count": 1
+    },
+    {
+      "start": "2026-08-31",
+      "termination": "2027-02-28",
+      "frequency_months": 3,
+      "note": "artefact: walk hits 2026-08-28, short first period",
+      "expected_dates": [
+        "2026-08-31",
+        "2026-11-28",
+        "2027-02-28"
+      ],
+      "period_count": 2
+    },
+    {
+      "start": "2026-03-31",
+      "termination": "2026-09-30",
+      "frequency_months": 3,
+      "note": "artefact: walk hits 2026-03-30, short first period",
+      "expected_dates": [
+        "2026-03-31",
+        "2026-06-30",
+        "2026-09-30"
+      ],
+      "period_count": 2
+    },
+    {
+      "start": "2026-09-07",
+      "termination": "2026-10-07",
+      "frequency_months": 12,
+      "note": "one month under an annual frequency",
+      "expected_dates": [
+        "2026-09-07",
+        "2026-10-07"
+      ],
+      "period_count": 1
+    },
+    {
+      "start": "2026-09-07",
+      "termination": "2026-12-07",
+      "frequency_months": 12,
+      "note": "one quarter under an annual frequency",
+      "expected_dates": [
+        "2026-09-07",
+        "2026-12-07"
+      ],
+      "period_count": 1
+    },
+    {
+      "start": "2026-09-07",
+      "termination": "2027-03-07",
+      "frequency_months": 12,
+      "note": "six months under an annual frequency",
+      "expected_dates": [
+        "2026-09-07",
+        "2027-03-07"
+      ],
+      "period_count": 1
+    },
+    {
+      "start": "2026-09-07",
+      "termination": "2027-09-07",
+      "frequency_months": 12,
+      "note": "exactly one period",
+      "expected_dates": [
+        "2026-09-07",
+        "2027-09-07"
+      ],
+      "period_count": 1
+    }
+  ]
+}
