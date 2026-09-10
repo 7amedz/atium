@@ -19,6 +19,12 @@ CASES = [
     ("2026-01-31", "2026-07-31", 3, "31st through February"),
     ("2026-11-30", "2027-02-28", 3, "anchor is a 28-day month end"),
     ("2028-02-29", "2029-02-28", 12, "leap-day start"),
+    (
+        "2026-02-28",
+        "2026-08-30",
+        3,
+        "February cap recovers to roll day 30; end-of-month is false",
+    ),
     # --- capping artefact; walk lands before the start, in the start's month ---
     (
         "2026-08-31",
@@ -33,6 +39,8 @@ CASES = [
         "artefact: walk hits 2026-03-30, short first period",
     ),
     # --- degenerate; tenor below one period, two dates only -------------------
+    ("2026-09-07", "2026-09-21", 3, "two weeks under a quarterly frequency"),
+    ("2026-09-07", "2026-10-07", 3, "one month under a quarterly frequency"),
     ("2026-09-07", "2026-10-07", 12, "one month under an annual frequency"),
     ("2026-09-07", "2026-12-07", 12, "one quarter under an annual frequency"),
     ("2026-09-07", "2027-03-07", 12, "six months under an annual frequency"),

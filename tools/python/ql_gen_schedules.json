@@ -95,11 +95,7 @@
       "termination": "2026-07-31",
       "frequency_months": 3,
       "note": "31st through February",
-      "expected_dates": [
-        "2026-01-31",
-        "2026-04-30",
-        "2026-07-31"
-      ],
+      "expected_dates": ["2026-01-31", "2026-04-30", "2026-07-31"],
       "period_count": 2
     },
     {
@@ -107,10 +103,7 @@
       "termination": "2027-02-28",
       "frequency_months": 3,
       "note": "anchor is a 28-day month end",
-      "expected_dates": [
-        "2026-11-30",
-        "2027-02-28"
-      ],
+      "expected_dates": ["2026-11-30", "2027-02-28"],
       "period_count": 1
     },
     {
@@ -118,22 +111,23 @@
       "termination": "2029-02-28",
       "frequency_months": 12,
       "note": "leap-day start",
-      "expected_dates": [
-        "2028-02-29",
-        "2029-02-28"
-      ],
+      "expected_dates": ["2028-02-29", "2029-02-28"],
       "period_count": 1
+    },
+    {
+      "start": "2026-02-28",
+      "termination": "2026-08-30",
+      "frequency_months": 3,
+      "note": "February cap recovers to roll day 30; end-of-month is false",
+      "expected_dates": ["2026-02-28", "2026-05-30", "2026-08-30"],
+      "period_count": 2
     },
     {
       "start": "2026-08-31",
       "termination": "2027-02-28",
       "frequency_months": 3,
       "note": "artefact: walk hits 2026-08-28, short first period",
-      "expected_dates": [
-        "2026-08-31",
-        "2026-11-28",
-        "2027-02-28"
-      ],
+      "expected_dates": ["2026-08-31", "2026-11-28", "2027-02-28"],
       "period_count": 2
     },
     {
@@ -141,22 +135,31 @@
       "termination": "2026-09-30",
       "frequency_months": 3,
       "note": "artefact: walk hits 2026-03-30, short first period",
-      "expected_dates": [
-        "2026-03-31",
-        "2026-06-30",
-        "2026-09-30"
-      ],
+      "expected_dates": ["2026-03-31", "2026-06-30", "2026-09-30"],
       "period_count": 2
+    },
+    {
+      "start": "2026-09-07",
+      "termination": "2026-09-21",
+      "frequency_months": 3,
+      "note": "two weeks under a quarterly frequency",
+      "expected_dates": ["2026-09-07", "2026-09-21"],
+      "period_count": 1
+    },
+    {
+      "start": "2026-09-07",
+      "termination": "2026-10-07",
+      "frequency_months": 3,
+      "note": "one month under a quarterly frequency",
+      "expected_dates": ["2026-09-07", "2026-10-07"],
+      "period_count": 1
     },
     {
       "start": "2026-09-07",
       "termination": "2026-10-07",
       "frequency_months": 12,
       "note": "one month under an annual frequency",
-      "expected_dates": [
-        "2026-09-07",
-        "2026-10-07"
-      ],
+      "expected_dates": ["2026-09-07", "2026-10-07"],
       "period_count": 1
     },
     {
@@ -164,10 +167,7 @@
       "termination": "2026-12-07",
       "frequency_months": 12,
       "note": "one quarter under an annual frequency",
-      "expected_dates": [
-        "2026-09-07",
-        "2026-12-07"
-      ],
+      "expected_dates": ["2026-09-07", "2026-12-07"],
       "period_count": 1
     },
     {
@@ -175,10 +175,7 @@
       "termination": "2027-03-07",
       "frequency_months": 12,
       "note": "six months under an annual frequency",
-      "expected_dates": [
-        "2026-09-07",
-        "2027-03-07"
-      ],
+      "expected_dates": ["2026-09-07", "2027-03-07"],
       "period_count": 1
     },
     {
@@ -186,10 +183,7 @@
       "termination": "2027-09-07",
       "frequency_months": 12,
       "note": "exactly one period",
-      "expected_dates": [
-        "2026-09-07",
-        "2027-09-07"
-      ],
+      "expected_dates": ["2026-09-07", "2027-09-07"],
       "period_count": 1
     }
   ]
