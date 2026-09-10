@@ -20,6 +20,7 @@ FetchContent_MakeAvailable(Catch2)
 add_executable(atium_tests
     # smoke_test.cpp
     year_fraction_tests.cpp
+    gen_schedules_test.cpp
 )
 
 target_link_libraries(atium_tests PRIVATE
