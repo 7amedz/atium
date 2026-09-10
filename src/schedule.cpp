@@ -17,6 +17,25 @@ namespace atium {
 //                      else (different year_month) we throw
 std::vector<Ymd> generate_schedule(Ymd start_date, Ymd termination_date, DurationM frequency) {
 
+    if (!start_date.ok() || !termination_date.ok()) {
+        throw std::runtime_error(std::format(
+            "Invalid dates in schedule generation \nDates: start_date:{} \n termination_date: {}",
+            start_date, termination_date));
+    }
+
+    if (!(start_date < termination_date)) {
+        throw std::runtime_error(
+            std::format("Termination date is not after start date in schedule generation \nDates: "
+                        "start_date:{} \n termination_date: {}",
+                        start_date, termination_date));
+    }
+
+    if (frequency.count() <= 0) {
+        throw std::runtime_error(
+            std::format("Frequency is not positive in schedule generation \nFrequency: {}M",
+                        frequency.count()));
+    }
+
     const std::chrono::year_month termination_ym =
         std::chrono::year_month{termination_date.year(), termination_date.month()};
     const std::chrono::year_month start_ym =
