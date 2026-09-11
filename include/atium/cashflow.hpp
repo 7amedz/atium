@@ -1,6 +1,7 @@
 #pragma once
 
 #include <chrono>
+#include <vector>
 namespace atium {
 
 struct Cashflow {
@@ -9,5 +10,9 @@ struct Cashflow {
 };
 
 double present_value(const Cashflow& cashflow, double discount_factor);
+
+std::vector<Cashflow> fixed_cashflows(const std::vector<std::chrono::year_month_day>& schedule,
+                                      double notional, double fixed_rate,
+                                      const std::vector<double>& year_fractions);
 
 } // namespace atium
