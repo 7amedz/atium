@@ -15,4 +15,8 @@ std::vector<Cashflow> fixed_cashflows(const std::vector<std::chrono::year_month_
                                       double notional, double fixed_rate,
                                       const std::vector<double>& year_fractions);
 
+std::vector<Cashflow> floating_cashflows(const std::vector<std::chrono::year_month_day>& schedule,
+                                         double notional, const std::vector<double>& floating_rates,
+                                         const std::vector<double>& year_fractions);
+
 } // namespace atium
