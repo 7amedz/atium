@@ -27,6 +27,38 @@ double present_value(const Cashflow& cashflow, double discount_factor) {
     return cashflow.amount * discount_factor;
 }
 
+double leg_present_value(const std::vector<Cashflow>& cashflows,
+                         const std::vector<double>& discount_factors, PayReceive pay_receive) {
+    if (cashflows.size() != discount_factors.size()) {
+        throw std::runtime_error(std::format(
+            "Error getting leg_present_value\ncashflows size does not match discount_factors size\n"
+            "cashflows.size() = {}\ndiscount_factors.size() = {}\n",
+            cashflows.size(), discount_factors.size()));
+    }
+
+    double value{0.0};
+    for (std::size_t i{0}; i < cashflows.size(); ++i) {
+        value += present_value(cashflows[i], discount_factors[i]);
+    }
+    if (!std::isfinite(value)) {
+        throw std::runtime_error(
+            std::format("Error getting leg_present_value\nleg present value is not finite\n"
+                        "leg_present_value = {}\n",
+                        value));
+    }
+
+    switch (pay_receive) {
+    case PayReceive::Receive:
+        return value;
+    case PayReceive::Pay:
+        return -value;
+    }
+
+    throw std::runtime_error(
+        std::format("Error getting leg_present_value\npay_receive is invalid\npay_receive = {}\n",
+                    static_cast<int>(pay_receive)));
+}
+
 std::vector<Cashflow> fixed_cashflows(const std::vector<std::chrono::year_month_day>& schedule,
                                       double notional, double fixed_rate,
                                       const std::vector<double>& year_fractions) {

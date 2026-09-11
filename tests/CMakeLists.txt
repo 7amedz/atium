@@ -26,6 +26,7 @@ add_executable(atium_tests
     coupon_tests.cpp
     fixed_cashflows_tests.cpp
     floating_cashflow_tests.cpp
+    leg_present_value_tests.cpp
 )
 
 target_link_libraries(atium_tests PRIVATE
