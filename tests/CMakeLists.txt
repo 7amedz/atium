@@ -22,6 +22,7 @@ add_executable(atium_tests
     year_fraction_tests.cpp
     gen_schedules_test.cpp
     cashflow_tests.cpp
+    rates_tests.cpp
 )
 
 target_link_libraries(atium_tests PRIVATE
