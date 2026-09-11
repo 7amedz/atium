@@ -63,7 +63,8 @@ target_compile_options(atium_warnings INTERFACE   #add the warning flags to atiu
 #
 #
 #
-add_library(atium STATIC src/year_fraction.cpp src/schedule.cpp src/cashflow.cpp src/rates.cpp)
+add_library(atium STATIC src/year_fraction.cpp src/schedule.cpp src/cashflow.cpp src/rates.cpp
+                         src/coupon.cpp)
 target_include_directories(atium  PUBLIC  ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(atium   PRIVATE atium_warnings)
 

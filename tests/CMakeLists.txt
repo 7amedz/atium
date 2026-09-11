@@ -23,6 +23,7 @@ add_executable(atium_tests
     gen_schedules_test.cpp
     cashflow_tests.cpp
     rates_tests.cpp
+    coupon_tests.cpp
 )
 
 target_link_libraries(atium_tests PRIVATE
