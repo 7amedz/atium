@@ -1,0 +1,32 @@
+{
+  "source": "QuantLib 1.43",
+  "interpolation": "LogLinearInterpolation on coordinates [0.0, 1.0] without extrapolation",
+  "factor_contract": "strictly positive finite factors; factors above one and inverted pairs are valid",
+  "tolerance": {
+    "kind": "relative",
+    "value": 1e-12
+  },
+  "cases": [
+    {
+      "start_factor": 0.99,
+      "end_factor": 0.97,
+      "interpolation_fraction": 0.5,
+      "note": "midpoint between declining positive factors",
+      "expected_factor": 0.9799489782636644
+    },
+    {
+      "start_factor": 0.98,
+      "end_factor": 1.02,
+      "interpolation_fraction": 0.25,
+      "note": "inverted factors with an interior factor above the start",
+      "expected_factor": 0.9898504838590922
+    },
+    {
+      "start_factor": 1.005,
+      "end_factor": 0.995,
+      "interpolation_fraction": 0.75,
+      "note": "factors straddling one under negative-rate-compatible inputs",
+      "expected_factor": 0.9974906327491324
+    }
+  ]
+}
